@@ -1,0 +1,7 @@
+/* TEAM */
+Разработка и вёрстка: Полунин Лев
+Контакт: 89086617996 / levapolunin@gmail.com
+
+/* SITE */
+Language: Russian
+Standards: HTML5, CSS3, ES5, Schema.org

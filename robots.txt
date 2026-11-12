@@ -1,0 +1,31 @@
+# Fancy Look · PRINT163 — типография в Самаре
+User-agent: *
+Allow: /
+Disallow: /send.php
+Disallow: /uploads/
+Disallow: /*?utm_
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid&gclid&fbclid /
+
+# Поисковые и AI-ассистенты (GEO): разрешаем индексировать контент для ответов
+User-agent: Yandex
+Allow: /
+User-agent: Googlebot
+Allow: /
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: YandexAdditional
+Allow: /
+
+Sitemap: https://print163.ru/sitemap.xml

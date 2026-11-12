@@ -1,0 +1,15 @@
+# Пример для nginx + php-fpm
+server {
+  listen 443 ssl http2;
+  server_name print163.ru;
+  root /var/www/print163.ru;
+  index index.html;
+  client_max_body_size 30m;
+  error_page 404 /404.html;
+  gzip on; gzip_types text/css application/javascript image/svg+xml application/json text/plain application/xml font/woff;
+  location / { try_files $uri $uri/ =404; }
+  location ~* \.(css|js|webp|jpg|png|svg|woff|mp4)$ { expires 1y; add_header Cache-Control "public, immutable"; }
+  location = /send.php { include fastcgi_params; fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name; fastcgi_pass unix:/run/php/php-fpm.sock; }
+}
+server { listen 80; server_name print163.ru www.print163.ru; return 301 https://print163.ru$request_uri; }
+server { listen 443 ssl; server_name www.print163.ru; return 301 https://print163.ru$request_uri; }
